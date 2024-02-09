@@ -14,8 +14,8 @@ const compareOdds = () => {
 
   rivalry.forEach((rivalryLine) => {
     betway.forEach((betwayLine) => {
-      if (rivalryLine.playerA.name === betwayLine.playerA.name) {
-        if (rivalryLine.playerB.name === betwayLine.playerB.name) {
+      if (rivalryLine.playerA.name.includes(betwayLine.playerA.name)) {
+        if (rivalryLine.playerB.name.includes(betwayLine.playerB.name)) {
           if (
             checkOddWinWin(
               Math.max(rivalryLine.playerA.odd, betwayLine.playerA.odd),
@@ -26,8 +26,8 @@ const compareOdds = () => {
           }
         }
       }
-      if (rivalryLine.playerA.name === betwayLine.playerB.name) {
-        if (rivalryLine.playerB.name === betwayLine.playerA.name) {
+      if (rivalryLine.playerA.name.includes(betwayLine.playerB.name)) {
+        if (rivalryLine.playerB.name.includes(betwayLine.playerA.name)) {
           if (
             checkOddWinWin(
               Math.max(rivalryLine.playerA.odd, betwayLine.playerB.odd),
